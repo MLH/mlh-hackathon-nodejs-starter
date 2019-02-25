@@ -4,7 +4,7 @@ const config = require("../config");
 module.exports.registerRoutes = app => {
   app.use("/", controllers.home);
   app.use("/auth", controllers.auth);
-  app.use("/guides", controllers.guide);
+  app.use("/tutorial", controllers.tutorial);
 };
 
 module.exports.registerErrorHandlers = app => {

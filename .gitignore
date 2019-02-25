@@ -1,19 +1,21 @@
-node_modules
-npm-debug.log
-package-lock.json
-yarn.lock
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-test
-temp*
+# dependencies
+/node_modules
 
+# testing
+/coverage
+
+# production
+/build
+
+# local scripts
+/local
+
+# misc
+.DS_Store
 .env
 
-.DS_Store
-.AppleDouble
-.LSOverride
-
-### IDE Settings (EditorConfig/Sublime)
-.editorconfig
-
-### IDE Settings (VSCode)
-.vscode
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
