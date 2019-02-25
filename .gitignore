@@ -1,0 +1,19 @@
+node_modules
+npm-debug.log
+package-lock.json
+yarn.lock
+
+test
+temp*
+
+.env
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### IDE Settings (EditorConfig/Sublime)
+.editorconfig
+
+### IDE Settings (VSCode)
+.vscode
