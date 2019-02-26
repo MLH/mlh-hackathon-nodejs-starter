@@ -10,7 +10,7 @@ module.exports.registerRoutes = app => {
 module.exports.registerErrorHandlers = app => {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render("error", {
+    res.render("500", {
       message: err.message,
       error: config.env === "development" ? err : {}
     });
