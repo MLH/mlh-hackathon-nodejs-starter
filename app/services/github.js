@@ -5,7 +5,7 @@ const authorize_url = "https://github.com/login/oauth/authorize";
 const token_url = "https://github.com/login/oauth/access_token";
 
 class GitHub {
-  constructor(client_id = "", client_secret = "", access_token = "") {
+  constructor({ client_id = "", client_secret = "", access_token = "" }) {
     this.client_id = client_id;
     this.client_secret = client_secret;
     this.access_token = access_token;

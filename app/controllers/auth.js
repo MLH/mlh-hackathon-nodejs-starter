@@ -7,11 +7,12 @@ const GitHub = require("../services/github");
 const router = express.Router();
 
 router.get("/logout", function(req, res) {
-  // TODO
+  req.session.destroy();
+  res.redirect("/");
 });
 
 router.get("/login/github", function(req, res) {
-  const github = new GitHub(config.githubClientId, config.githubClientSecret);
+  const github = new GitHub({ client_id: config.githubClientId, client_secret: config.githubClientSecret });
   res.redirect(github.authorization_url("public_repo"));
 });
 
@@ -21,14 +22,19 @@ router.get("/callback/github", async function(req, res) {
   }
 
   // Fetch user from GitHub OAuth and store in session
-  const github = new GitHub(config.githubClientId, config.githubClientSecret);
+  const github = new GitHub({ client_id: config.githubClientId, client_secret: config.githubClientSecret });
   const access_token = await github.get_token(req.query.code);
 
   if (!access_token) {
     return res.render("404");
   }
 
-  const user = models.User.find_or_create_from_token(access_token);
+  const user = await models.User.find_or_create_from_token(access_token);
+  console.log("user", user);
+
+  req.session.access_token = access_token;
+  req.session.user_id = user.id;
+  console.log("🍎", req.session.user_id);
 
   return res.redirect("/");
 });

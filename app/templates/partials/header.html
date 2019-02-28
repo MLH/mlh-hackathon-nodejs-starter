@@ -17,11 +17,21 @@
             </a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-inherit" href="/auth/login/github">
-            Login with GitHub
-          </a>
-        </li>
+        {{#if session.user }}
+          <li class="nav-item">
+            <a class="nav-link text-inherit" href="/auth/logout">
+              Logout
+            </a>
+          </li>
+        {{/if}}
+        {{ session.user }}
+        {{#unless session.user }}
+          <li class="nav-item">
+            <a class="nav-link text-inherit" href="/auth/login/github">
+              Login with GitHub
+            </a>
+          </li>
+        {{/unless }}
       </ul>
     </div>
   </div>
