@@ -1,7 +1,7 @@
 const express = require("express");
 
+const models = require("../models");
 const config = require("../../config");
-const User = require("../models/user");
 const GitHub = require("../services/github");
 
 const router = express.Router();
@@ -28,7 +28,7 @@ router.get("/callback/github", async function(req, res) {
     return res.render("404");
   }
 
-  const user = User.find_or_create_from_token(access_token);
+  const user = models.User.find_or_create_from_token(access_token);
 
   return res.redirect("/");
 });

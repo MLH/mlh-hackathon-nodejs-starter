@@ -1,29 +1,35 @@
-const Sequelize = require("sequelize");
+const GitHub = require("../services/GitHub");
 
-class User extends Sequelize.Model {
-  static init(sequelize) {
-    return super.init(
-      {
-        username: { type: Sequelize.STRING, unique: true, allowNull: false },
-        avatar_url: { type: Sequelize.STRING, allowNull: false },
-        github_id: { type: Sequelize.STRING, allowNull: false }
-      },
-      { sequelize }
-    );
-  }
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define(
+    "User",
+    {
+      username: { type: DataTypes.STRING, unqiue: true, allowNull: false },
+      avatar_url: DataTypes.STRING,
+      github_id: DataTypes.STRING
+    },
+    { sequelize }
+  );
 
-  static associate(models) {
-    // Create associations with other models here
-    // http://docs.sequelizejs.com/manual/tutorial/associations.html
-    //
-    // this.hasMany(models.Repository);
-  }
+  User.associate = function(models) {
+    // associations can be defined here
+  };
 
-  static async find_or_create_from_token(access_token) {
+  User.find_or_create_from_token = async function(access_token) {
     const data = await GitHub.get_user_from_token(access_token);
 
     /* Find existing user or create new User instances */
-  }
-}
+    const instance = await this.findOrCreate({
+      where: { username: data["login"] },
+      defaults: {
+        username: data["login"],
+        avatar_url: data["avatar_url"],
+        github_id: data["id"]
+      }
+    });
 
-module.exports = User;
+    return instance;
+  };
+
+  return User;
+};
