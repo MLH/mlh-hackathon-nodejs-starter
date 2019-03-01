@@ -9,7 +9,7 @@ module.exports.registerRoutes = app => {
 
 module.exports.registerErrorHandlers = app => {
   app.use(function(err, req, res, next) {
-    console.log("ERROR", err.message);
+    console.error(err.message);
     res.status(err.status || 500);
     res.render("500", {
       message: err.message,

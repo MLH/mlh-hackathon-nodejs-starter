@@ -6,7 +6,6 @@ const router = express.Router();
 router.get("/requesting", async function(req, res) {
   const { query = "" } = req.query;
 
-  console.log("SEARCH", query);
   if (!req.session.access_token) {
     return res.render("tutorial/index");
   }
