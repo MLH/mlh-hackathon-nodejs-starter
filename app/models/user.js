@@ -1,4 +1,4 @@
-const GitHub = require("../services/GitHub");
+const GitHub = require("../services/github");
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
