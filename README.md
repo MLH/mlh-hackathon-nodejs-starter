@@ -1,6 +1,6 @@
 # Introduction
 
-This is a hackathon boilerplate for new Nodejs applications created by [Major League Hacking][mlh-github]. It is for hackers looking to get started quickly on a new hackathon project using the Nodejs environment.
+This is a hackathon boilerplate for new Node.js applications created by [Major League Hacking][mlh-github]. It is for hackers looking to get started quickly on a new hackathon project using the Node.js environment.
 
 # Code of Conduct
 
