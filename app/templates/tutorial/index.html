@@ -16,8 +16,8 @@
 
     <div class="border rounded p-5 mb-5">
     <h5 class="py-1 m-0">Retrieving your starred projects</h5>
-    <p>You can retrieve your starred projects on GitHub using the <code>/user/starred</code> endpoint. Within this starter project, you can also use the <code>services/github.py</code> module, which makes it easier to make an authenticated request.<p>
-    <p>A GET request to the <code>/user/starred</code> endpoint using the <code>github.py</code> module would follow this format:</p>
+    <p>You can retrieve your starred projects on GitHub using the <code>/user/starred</code> endpoint. Within this starter project, you can also use the <code>services/github.js</code> module, which makes it easier to make an authenticated request.<p>
+    <p>A GET request to the <code>/user/starred</code> endpoint using the <code>github.js</code> module would follow this format:</p>
     <pre class="bg-light rounded"><code>
       const github = new GitHub({ access_token: access_token });
       const results = await github.get('/user/starred');
@@ -40,8 +40,8 @@
 
   <div class="border rounded p-5">
     <h5 class="py-1 m-0">Searching GitHub</h5>
-    <p>The endpoint for searching GitHub projects is located at <code>/search/repositories</code>. You can use this endpoint to find projects on GitHub. Within this starter project, you also can use the <code>services/github.py</code> module, which makes it easier to make an authenticated request.
-    <p>A GET request to the <code>/search/repositories</code> endpoint using the <code>github.py</code> module would follow this format:</p>
+    <p>The endpoint for searching GitHub projects is located at <code>/search/repositories</code>. You can use this endpoint to find projects on GitHub. Within this starter project, you also can use the <code>services/github.js</code> module, which makes it easier to make an authenticated request.
+    <p>A GET request to the <code>/search/repositories</code> endpoint using the <code>github.js</code> module would follow this format:</p>
     <pre class="bg-light rounded"><code>
       const github = new GitHub({ access_token: access_token });
       const results = await github.get('/search/repositories');
