@@ -30,7 +30,6 @@ app.set("view engine", "html");
 const options = { secret: config.secretKey, saveUninitialized: true, resave: true };
 app.use(session(options));
 app.use(function(req, res, next) {
-  // console.log(req.session);
   res.locals.session = req.session;
   next();
 });

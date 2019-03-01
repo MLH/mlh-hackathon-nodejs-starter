@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     const data = await GitHub.get_user_from_token(access_token);
 
     /* Find existing user or create new User instances */
-    const instance = await this.findOrCreate({
+    const [instance, created] = await this.findOrCreate({
+      raw: true,
       where: { username: data["login"] },
       defaults: {
         username: data["login"],

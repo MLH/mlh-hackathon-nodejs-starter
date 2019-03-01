@@ -18,13 +18,16 @@
           </div>
         </li>
         {{#if session.user }}
+          <li class="nav-item p-2 pr-3">
+            <img src="{{ session.user.avatar_url }}" class="rounded mr-2" style="width:24px;height:24px;" />
+            {{ session.user.username }}
+          </li>
           <li class="nav-item">
             <a class="nav-link text-inherit" href="/auth/logout">
               Logout
             </a>
           </li>
         {{/if}}
-        {{ session.user }}
         {{#unless session.user }}
           <li class="nav-item">
             <a class="nav-link text-inherit" href="/auth/login/github">

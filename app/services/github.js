@@ -28,6 +28,14 @@ class GitHub {
     return data.access_token;
   }
 
+  async get(route_url, params = {}) {
+    const url = api_url + route_url;
+    params["access_token"] = this.access_token;
+
+    const response = await axios.get(url, { params });
+    return response.data;
+  }
+
   static async get_user_from_token(access_token) {
     /* Fetch user data using the access token. */
     const url = api_url + "/user";

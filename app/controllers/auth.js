@@ -30,11 +30,9 @@ router.get("/callback/github", async function(req, res) {
   }
 
   const user = await models.User.find_or_create_from_token(access_token);
-  console.log("user", user);
 
   req.session.access_token = access_token;
-  req.session.user_id = user.id;
-  console.log("🍎", req.session.user_id);
+  req.session.user = user;
 
   return res.redirect("/");
 });
