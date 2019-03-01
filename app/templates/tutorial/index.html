@@ -19,8 +19,8 @@
     <p>You can retrieve your starred projects on GitHub using the <code>/user/starred</code> endpoint. Within this starter project, you can also use the <code>services/github.py</code> module, which makes it easier to make an authenticated request.<p>
     <p>A GET request to the <code>/user/starred</code> endpoint using the <code>github.py</code> module would follow this format:</p>
     <pre class="bg-light rounded"><code>
-      github = GitHub(access_token=session['access_token'])
-      results = github.get('/user/starred')
+      const github = new GitHub({ access_token: access_token });
+      const results = await github.get('/user/starred');
     </code></pre>
     <p class="mt-4">As a result, you will see your starred repositories below:</p>
     {{#if tutorial1}}
@@ -43,8 +43,8 @@
     <p>The endpoint for searching GitHub projects is located at <code>/search/repositories</code>. You can use this endpoint to find projects on GitHub. Within this starter project, you also can use the <code>services/github.py</code> module, which makes it easier to make an authenticated request.
     <p>A GET request to the <code>/search/repositories</code> endpoint using the <code>github.py</code> module would follow this format:</p>
     <pre class="bg-light rounded"><code>
-      github = GitHub(access_token=session['access_token'])
-      results = github.get('/search/repositories')
+      const github = new GitHub({ access_token: access_token });
+      const results = await github.get('/search/repositories');
     </code></pre>
     <p class="mt-4">As a result, you should be able to search for GitHub projects below:</p>
     <div class="text-center mx-auto mb-3">
