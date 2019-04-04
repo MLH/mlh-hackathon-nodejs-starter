@@ -2,7 +2,7 @@
 
 This is a hackathon boilerplate for new Node.js applications created by [Major League Hacking][mlh-github]. It is for hackers looking to get started quickly on a new hackathon project using the Node.js environment.
 
-- [Installation Guide](#installation-guide) - How to get started with a new Flask app
+- [Installation Guide](#installation-guide) - How to get started with a new NodeJS app
 - [User Guide](https://github.com/MLH/mlh-hackathon-nodejs-starter/blob/master/docs/USER_GUIDE.md) - How to develop apps created with this starter project
 - [Contributing Guide](https://github.com/MLH/mlh-hackathon-nodejs-starter/blob/master/docs/CONTRIBUTING.md) - How to contribute to the project
 
