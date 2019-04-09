@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  nodejs:
+    image: node:10.15-alpine
+    volumes:
+      - ./:/app/
+    working_dir: /app/
+    networks:
+      - public
+    ports:
+      - "5000:5000"
+      - "9042:9042"
+    environment:
+      - PORT=
+      - NODE_ENV=development
+      - SECRET_KEY=
+      - DATABASE_URL=${DATABASE_URL}
+      - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+    command: npm run start
+
+  postgres:
+    image: postgres:11.2-alpine
+    volumes:
+      - data_db:/var/lib/postgresql/data
+    networks:
+      - public
+    ports:
+      - "5432:5432"
+
+
+networks:
+  public:
+
+volumes:
+  data_db:
