@@ -217,6 +217,63 @@ The `DATABASE_URL` variable is the path to your database system. This is where y
 
 The `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` variables are the app credentials from your [GitHub OAuth app](https://github.com/settings/developers).
 
+## <a name='docker'>Deploy development environment with docker</a>
+
+You can easily and quickly deploy an environment with Docker containers. A
+Makefile is available with some commands to quick and easy launch.
+
+### What you need ?
+
+* a docker daemon running on your machine.
+* docker-compose tools to be able to launch the environment.
+
+### How to use.
+
+The first time you want to launch the environment, you have to initialize it
+(build stuff for docker and install the dependencies), for that just launch:
+
+```sh
+make init
+```
+
+This command will initialize and launch the entire process in watch mode.
+(Nodejs process with livereload).
+
+If your environment was already been initialized, you can just use a command to
+run the application:
+
+```sh
+make watch # run the nodejs app in development mode with a livereload.
+# OR
+make run # run the nodejs app in production mode.
+```
+
+If you want to visualize the logs of the Nodejs app:
+
+```sh
+make logs
+```
+
+If you want to switch off your environment:
+
+```sh
+make stop
+```
+
+Finally, when your work is finished and you don't need the environment at all,
+you can stop and destroy all stuff and data (node_modules and database data):
+
+```sh
+make destroy
+```
+
+**Note**: if you want advanced commands for this docker environment, consult the
+help:
+
+```sh
+make help
+```
+
 ## Deployment
 
 ### Deploy to Heroku
