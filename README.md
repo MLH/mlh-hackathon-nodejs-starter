@@ -10,11 +10,13 @@ This is a hackathon boilerplate for new Node.js applications created by [Major L
 
 This project requires the following tools:
 
-- Node.js - The JavaScript environment for server-side code.
-- NPM - A Node.js package manager used to install dependencies.
-- PostgreSQL - A relational database system.
+- Node.js - The JavaScript environment for server-side code. If Node.js is not installed on your machine you can download it from [here](https://nodejs.org/en/download/)
+- NPM - A Node.js package manager used to install dependencies. If NPM wasn't installed on your machine by installing you will be able to use it
+- PostgreSQL - A relational database system. If it is not installed on your machine you can download it from [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 
 To get started, install NPM and Postgres on your local computer if you don't have them already. A simple way for Mac OS X users to install Postgres is using [Postgres.app](https://postgresapp.com/).
+
+A simple guide to install postgres on windows is [here](https://www.microfocus.com/documentation/idol/IDOL_12_0/MediaServer/Guides/html/English/Content/Getting_Started/Configure/_TRN_Set_up_PostgreSQL.htm)
 
 ## Getting Started
 
@@ -63,6 +65,8 @@ $ npm start
 ```
 
 Open http://localhost:5000 to view it in your browser.
+
+![App Screenshot](sreenshot.png)
 
 The app will automatically reload if you make changes to the code.
 You will see the build errors and warnings in the console.
