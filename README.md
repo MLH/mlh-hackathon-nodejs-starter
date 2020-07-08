@@ -14,7 +14,7 @@ This project requires the following tools:
 - [NPM](https://www.npmjs.com/) - A Node.js package manager used to install dependencies.
 - [PostgreSQL](https://www.postgresql.org/) - A relational database system.
 
-To get started, install NPM and Postgres on your local computer if you don't have them already. A simple way for Mac OS X users to install Postgres is using [Postgres.app](https://postgresapp.com/).
+To get started, install NPM and Postgres on your local computer if you don't have them already. A simple way for Mac OS X users to install Postgres is using [Postgres.app](https://postgresapp.com/). Here is a [Windows guide](https://www.postgresqltutorial.com/install-postgresql/) for installing PostgresSQL.
 
 ## Getting Started
 
