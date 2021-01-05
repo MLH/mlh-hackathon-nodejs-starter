@@ -7,7 +7,7 @@
     "deploy": "NODE_ENV=production node app/index.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "compression": "^1.7.3",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
