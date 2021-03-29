@@ -7,16 +7,17 @@
     "deploy": "NODE_ENV=production node app/index.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "compression": "^1.7.3",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
-    "express-handlebars": "^4.0.4",
+    "express-handlebars": "^5.2.1",
     "express-session": "^1.15.6",
     "morgan": "^1.9.1",
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": ">=5.3.0"
+    "sequelize": ">=5.3.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

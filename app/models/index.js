@@ -20,15 +20,23 @@ fs.readdirSync(__dirname)
     return file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js";
   })
   .forEach(file => {
-    const model = sequelize["import"](path.join(__dirname, file));
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize);
     db[model.name] = model;
   });
+
+db["User"].hasMany(db["Playlist"], { onDelete: "CASCADE" });
+db["Playlist"].belongsTo(db["User"]);
+
+db["Playlist"].hasMany(db["Video"], { onDelete: "CASCADE" });
+db["Video"].belongsTo(db["Playlist"]);
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
+
+sequelize.sync();
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

@@ -6,17 +6,17 @@ const GitHub = require("../services/github");
 
 const router = express.Router();
 
-router.get("/logout", function(req, res) {
+router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
 
-router.get("/login/github", function(req, res) {
+router.get("/login/github", (req, res) => {
   const github = new GitHub({ client_id: config.githubClientId, client_secret: config.githubClientSecret });
   res.redirect(github.authorization_url("public_repo"));
 });
 
-router.get("/callback/github", async function(req, res) {
+router.get("/callback/github", async (req, res) => {
   if (!req.query.code) {
     return res.render("500");
   }

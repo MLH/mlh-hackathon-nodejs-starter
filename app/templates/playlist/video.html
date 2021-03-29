@@ -1,0 +1,13 @@
+<div class="bg-dark text-light">
+  <div class="container text-center py-5 mb-2">
+    <div class="mt-1">
+      <h2 class="h4 mb-2">{{ video_title }}</h2>
+      <h3 class="h5 text-muted mb-0">from playlist "{{ playlist_title }}"</h3>
+    </div>
+  </div>
+</div>
+<div class="container p-5" style="max-width: 980px;">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/{{video_id}}"></iframe>
+  </div>
+</div>

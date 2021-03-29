@@ -7,5 +7,6 @@ module.exports = {
   env: process.env.NODE_ENV || "development",
   secretKey: process.env.SECRET_KEY || "octocat",
   githubClientId: process.env.GITHUB_CLIENT_ID || "",
-  githubClientSecret: process.env.GITHUB_CLIENT_SECRET || ""
+  githubClientSecret: process.env.GITHUB_CLIENT_SECRET || "",
+  youtubeApiKey: process.env.YOUTUBE_API_KEY || ""
 };

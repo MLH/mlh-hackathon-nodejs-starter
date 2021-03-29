@@ -1,0 +1,51 @@
+<div class="bg-dark text-light">
+  <div class="container text-center py-5 mb-4">
+    <div class="mt-3 mb-4">
+      <h1 class="h1 mb-0">{{ playlist_title }}</h1>
+      <h2 class="h4 font-weight-light text-gray-light">added by {{ created_by }}</h2>
+    </div>
+    {{#if isAuthorized}}
+      <form action="/playlist/{{ playlist_id }}/add" method="post"
+        class="form-inline align-items-center justify-content-center" role="form">
+        <input class="form-control mr-2" type="url" name="video_url" id="video_url" placeholder="video url" />
+        <button class="btn btn-outline-light" type="submit">Add Video</button>
+      </form>
+    {{/if}}
+  </div>
+</div>
+
+<div class="container py-5 my-5" style="max-width: 980px;">
+  {{#each videos}}
+    <div class="border p-5 mb-4">
+      <div class="row">
+        <div class="col-md">
+          <div class="row">
+            <div class="col-md-3 mb-sm-4">
+              <div class="mr-4">
+                <a href="/playlist/{{ playlist_id }}/video/{{ video_id }}">
+                  <img src="{{ thumbnailUrl }}" alt="{{ video_title }}" class="img-fluid">
+                </a>
+              </div>
+            </div>
+            <div class="col-md mb-sm-4">
+              <h5 class="mb-0">
+                <a href="/playlist/{{ playlist_id }}/video/{{ video_id }}">
+                  {{ video_title }}
+                </a>
+              </h5>
+              <p class="m-0">
+                <span class="text-muted">{{ channel_title }}</span>
+                <br />
+                {{ video_description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {{#if isAuthorized}}
+          <form action="/playlist/{{ playlist_id }}/video/delete/{{ id }}" method="post" role="form" class="col-md-1">
+            <button class="btn btn-outline-danger" type="submit"><i class="bi bi-trash"></i></button>
+          </form>
+        {{/if}}
+      </div>
+  {{/each}}
+</div>
