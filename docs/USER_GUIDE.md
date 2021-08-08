@@ -186,6 +186,12 @@ const user = await User.findAll({ where: { username: "octocat" } });
 console.log(user);
 ```
 
+To initialize the database schema, run 
+
+```
+$ npx sequelize-cli db:migrate
+```
+
 This gives us flexibility in our database layer and keeps our JavaScript code clean of SQL commands. The data models located in the `/models` directory each use the `Sequelize` library.
 
 ## <a name='github-oauth'>GitHub OAuth Apps</a>

@@ -39,7 +39,7 @@ class GitHub {
   static async get_user_from_token(access_token) {
     /* Fetch user data using the access token. */
     const url = api_url + "/user";
-    const config = { params: { access_token: access_token } };
+    const config = { headers : {'Authorization' : `token ${access_token}` }};
 
     const response = await axios.get(url, config);
     return response.data;
